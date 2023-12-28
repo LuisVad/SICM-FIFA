@@ -1,0 +1,56 @@
+Selecciones:
+
+GET http://localhost:3000/copa-mundial/selecciones/
+GET (id) http://localhost:3000/copa-mundial/selecciones/{id}
+
+POST http://localhost:3000/copa-mundial/selecciones/
+{
+    "nombre": "Argentina", ---El nombre de la selección ya está en uso si es Duplicate soccer team
+    "ranking_fifa": 1,
+    "primera_participacion": 1930,
+    "titulos": 3,
+    "id_confederacion": 3
+}
+
+PUT http://localhost:3000/copa-mundial/selecciones/{id}
+{
+    "nombre": "Argentina", --- No se modificara en el front
+    "ranking_fifa": 1, --- No puedes registrar esta posición porque otra selección la está ocupando si es Duplicate ranking position a menos de que sea 0
+    "primera_participacion": 1950,
+    "titulos": 3,
+    "id_confederacion": 3
+}
+
+DELETE  http://localhost:3000/copa-mundial/selecciones/{id}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Sedes:
+
+GET http://localhost:3000/copa-mundial/sedes
+GET (id) http://localhost:3000/copa-mundial/sedes/{id}
+
+POST http://localhost:3000/copa-mundial/sedes/
+{
+        "nombre_estadio": "Estadio La Bombonera", ---El nombre del Estadio ya está en uso si es Duplicate stadium
+        "ciudad": "Buenos Aires",
+        "anio_inauguracion": 1934,
+        "capacidad": 78500,
+        "equipos": "BOCA Juniors",
+        "pais_organizador": "Argentina"
+}
+
+
+PUT http://localhost:3000/copa-mundial/sedes/{id}
+{
+        "nombre_estadio": "Estadio Alberto J. Armando",
+        "ciudad": "Buenos Aires",
+        "anio_inauguracion": 1934,
+        "capacidad": 78500,
+        "equipos": "BOCA Juniors",
+        "pais_organizador": "Argentina"
+}
+
+DELETE  http://localhost:3000/copa-mundial/sedes/{id}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
