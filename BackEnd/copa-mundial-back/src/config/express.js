@@ -7,7 +7,7 @@ const cors = require('cors');
 //const path = require('path');
 
 const {
-    seleccionRouter, sedeRouter, 
+    seleccionRouter, sedeRouter, partidosRouter, resultadosRouter
 } = require('../modules/controller/routes') //Acceso a los Routers
 
 const app = express();
@@ -25,6 +25,8 @@ app.get('/', (req, res) => {
 
 //Endpoint's
 app.use('/copa-mundial/selecciones', seleccionRouter);
-app.use('/copa-mundial/sedes', sedeRouter)
+app.use('/copa-mundial/sedes', sedeRouter);
+app.use('/copa-mundial/partidos', partidosRouter);
+app.use('/copa-mundial/resultados', resultadosRouter);
 
 module.exports = { app };

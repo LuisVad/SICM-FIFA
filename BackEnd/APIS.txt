@@ -54,3 +54,50 @@ PUT http://localhost:3000/copa-mundial/sedes/{id}
 DELETE  http://localhost:3000/copa-mundial/sedes/{id}
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Partidos:
+
+GET http://localhost:3000/copa-mundial/partidos
+GET (id) http://localhost:3000/copa-mundial/partidos/{id}
+
+POST http://localhost:3000/copa-mundial/partidos
+{
+    "fecha": "2024-01-30",
+    "id_sede": 2
+}
+
+
+PUT http://localhost:3000/copa-mundial/partidos/{id}
+{
+    "fecha": "2024-01-20",
+    "id_sede": 1
+}
+
+DELETE  http://localhost:3000/copa-mundial/partidos/{id}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Resultados:
+
+GET http://localhost:3000/copa-mundial/resultados
+GET (id) http://localhost:3000/copa-mundial/resultados{id}
+
+POST http://localhost:3000/copa-mundial/resultados
+{
+        "fase": "Octavos de Final",
+        "id_partido": 2,
+        "resultado_equipo_local": 4,
+        "resultado_equipo_visitante": 1
+}
+
+PUT http://localhost:3000/copa-mundial/resultados/{id}
+{
+        "fase": "Final",
+        "id_partido": 2,
+        "resultado_equipo_local": 4,
+        "resultado_equipo_visitante": 1
+}
+
+DELETE  http://localhost:3000/copa-mundial/resultados/{id}
