@@ -63,15 +63,23 @@ GET (id) http://localhost:3000/copa-mundial/partidos/{id}
 
 POST http://localhost:3000/copa-mundial/partidos
 {
-    "fecha": "2024-01-30",
-    "id_sede": 2
+    "fecha": "2024-01-23",
+    "hora_inicio": "16:00:00",
+    "id_sede": 1,
+    "id_seleccion_local": 1,
+    "id_seleccion_visitante": 2,
+    "id_arbitro": 1
 }
 
 
 PUT http://localhost:3000/copa-mundial/partidos/{id}
 {
-    "fecha": "2024-01-20",
-    "id_sede": 1
+    "fecha": "2024-01-23",
+    "hora_inicio": "18:00:00",
+    "id_sede": 2,
+    "id_seleccion_local": 1,
+    "id_seleccion_visitante": 2,
+    "id_arbitro": 2
 }
 
 DELETE  http://localhost:3000/copa-mundial/partidos/{id}

@@ -20,7 +20,7 @@ const findById = async (id_resultado) => {
 const saveResultado = async (resultado) => {
     const { fase, id_partido, resultado_equipo_local, resultado_equipo_visitante } = resultado;
 
-    if (!fase || !id_partido || !resultado_equipo_local || !resultado_equipo_visitante) {
+    if (!fase || !id_partido) {
         throw Error("Missing fields");
     }
 
@@ -35,7 +35,7 @@ const updateResultado = async (resultado, id_resultado) => {
 
     if (!id_resultado) throw Error("Missing Fields -> id_resultado");
 
-    if (!resultado.fase || !resultado.id_partido || !resultado.resultado_equipo_local || !resultado.resultado_equipo_visitante) {
+    if (!resultado.fase || !resultado.id_partido) {
         throw Error("Missing fields");
     }
 

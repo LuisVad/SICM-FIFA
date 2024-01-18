@@ -5,11 +5,12 @@ const { seleccionRouter } = require('./selecciones/selecciones.controller')
 const { sedeRouter } = require('./sedes/sedes.controller')
 const { partidosRouter } = require('./partidos/partidos.controller')
 const { resultadosRouter } = require('./resultados/resultados.controller')
+const { jugadoresRouter } = require('./jugadores/jugadores.controller')
 
 module.exports = {
     seleccionRouter,
     sedeRouter,
     partidosRouter,
     resultadosRouter,
-
+    jugadoresRouter
 }

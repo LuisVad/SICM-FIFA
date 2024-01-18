@@ -33,8 +33,8 @@ const getById = async (req, res = response) => {
 
 const insert = async (req, res = response) => {
     try {
-        const { fecha, id_sede } = req.body;
-        const partido = await savePartido({ fecha, id_sede });
+        const { fecha, hora_inicio, id_sede, id_seleccion_local, id_seleccion_visitante, id_arbitro } = req.body;
+        const partido = await savePartido({ fecha, hora_inicio, id_sede, id_seleccion_local, id_seleccion_visitante, id_arbitro });
         res.status(200).json(partido);
     } catch (error) {
         //console.log(error);
@@ -46,8 +46,8 @@ const insert = async (req, res = response) => {
 const update = async (req, res = response) => {
     try {
         const { id } = req.params;
-        const { fecha, id_sede } = req.body;
-        const response = await updatePartido({ fecha, id_sede }, id);
+        const { fecha, hora_inicio, id_sede, id_seleccion_local, id_seleccion_visitante, id_arbitro } = req.body;
+        const response = await updatePartido({ fecha, hora_inicio, id_sede, id_seleccion_local, id_seleccion_visitante, id_arbitro }, id);
         res.status(200).json(response);
     } catch (error) {
         //console.log(error);

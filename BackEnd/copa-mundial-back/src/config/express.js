@@ -7,7 +7,7 @@ const cors = require('cors');
 //const path = require('path');
 
 const {
-    seleccionRouter, sedeRouter, partidosRouter, resultadosRouter
+    seleccionRouter, sedeRouter, partidosRouter, resultadosRouter, jugadoresRouter
 } = require('../modules/controller/routes') //Acceso a los Routers
 
 const app = express();
@@ -28,5 +28,6 @@ app.use('/copa-mundial/selecciones', seleccionRouter);
 app.use('/copa-mundial/sedes', sedeRouter);
 app.use('/copa-mundial/partidos', partidosRouter);
 app.use('/copa-mundial/resultados', resultadosRouter);
+app.use('/copa-mundial/jugadores', jugadoresRouter);
 
 module.exports = { app };
