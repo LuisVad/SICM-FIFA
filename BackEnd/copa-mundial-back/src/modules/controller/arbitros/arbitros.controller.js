@@ -3,15 +3,15 @@ const { validateError } = require('../../../utils/functions');
 const {
     findAll,
     findById,
-    saveJugador,
-    updateJugador,
-    deleteJugador,
-} = require('./jugadores.gateaway')
+    saveArbitros,
+    updateArbitros,
+    deleteArbitros,
+} = require('./arbitros.gateaway')
 
 const getAll = async (req, res = response) => {
     try {
-        const jugadores = await findAll();
-        res.status(200).json(jugadores);
+        const arbitros = await findAll();
+        res.status(200).json(arbitros);
     } catch (error) {
         const message = validateError(error);
         res.status(400).json({ message });
@@ -21,8 +21,8 @@ const getAll = async (req, res = response) => {
 const getById = async (req, res = response) => {
     try {
         const { id } = req.params;
-        const jugador = await findById(id);
-        res.status(200).json(jugador);
+        const arbitro = await findById(id);
+        res.status(200).json(arbitro);
     } catch (error) {
         const message = validateError(error);
         res.status(400).json({ message });
@@ -31,9 +31,9 @@ const getById = async (req, res = response) => {
 
 const insert = async (req, res = response) => {
     try {
-        const { nombre, posicion, id_seleccion, goles_anotados, fecha_debut } = req.body;
-        const jugador = await saveJugador({ nombre, posicion, id_seleccion, goles_anotados, fecha_debut });
-        res.status(200).json(jugador);
+        const { nombre, nacionalidad, fecha_debut } = req.body;
+        const arbitro = await saveArbitros({ nombre, nacionalidad, fecha_debut });
+        res.status(200).json(arbitro);
     } catch (error) {
         const message = validateError(error);
         res.status(400).json({ message });
@@ -43,8 +43,8 @@ const insert = async (req, res = response) => {
 const update = async (req, res = response) => {
     try {
         const { id } = req.params;
-        const { nombre, posicion, id_seleccion, goles_anotados, fecha_debut } = req.body;
-        const response = await updateJugador({ nombre, posicion, id_seleccion, goles_anotados, fecha_debut }, id);
+        const { nombre, nacionalidad, fecha_debut } = req.body;
+        const response = await updateArbitros({ nombre, nacionalidad, fecha_debut }, id);
         res.status(200).json(response);
     } catch (error) {
         console.log(error);
@@ -56,22 +56,22 @@ const update = async (req, res = response) => {
 const erase = async (req, res = response) => {
     try {
         const { id } = req.params;
-        const jugador = await deleteJugador(id);
-        res.status(200).json(jugador);
+        const arbitro = await deleteArbitros(id);
+        res.status(200).json(arbitro);
     } catch (error) {
         const message = validateError(error);
         res.status(400).json({ message });
     }
 };
 
-const jugadoresRouter = Router();
+const arbitrosRouter = Router();
 
-jugadoresRouter.get('/', [], getAll);
-jugadoresRouter.get('/:id', [], getById);
-jugadoresRouter.post('/', [], insert);
-jugadoresRouter.put('/:id', [], update);
-jugadoresRouter.delete('/:id', [], erase);
+arbitrosRouter.get('/', [], getAll);
+arbitrosRouter.get('/:id', [], getById);
+arbitrosRouter.post('/', [], insert);
+arbitrosRouter.put('/:id', [], update);
+arbitrosRouter.delete('/:id', [], erase);
 
 module.exports = {
-    jugadoresRouter,
+    arbitrosRouter,
 };
