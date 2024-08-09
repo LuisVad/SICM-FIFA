@@ -8,6 +8,8 @@ const { resultadosRouter } = require('./resultados/resultados.controller')
 const { jugadoresRouter } = require('./jugadores/jugadores.controller')
 const { arbitrosRouter } = require('./arbitros/arbitros.controller')
 const { directoresTecnicosRouter } = require('./directoresTecnicos/directoresTecnicos.controller')
+const { usuariosRouter } = require('./usuarios/usuarios.controller')
+const { noticiasRouter } = require('./noticias/noticias.controller')
 
 module.exports = {
     seleccionRouter,
@@ -17,4 +19,6 @@ module.exports = {
     jugadoresRouter,
     arbitrosRouter,
     directoresTecnicosRouter,
+    usuariosRouter,
+    noticiasRouter
 }

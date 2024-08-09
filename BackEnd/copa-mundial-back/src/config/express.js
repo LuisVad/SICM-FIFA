@@ -8,7 +8,7 @@ const cors = require('cors');
 
 const {
     seleccionRouter, sedeRouter, partidosRouter, resultadosRouter, jugadoresRouter, arbitrosRouter,
-    directoresTecnicosRouter, 
+    directoresTecnicosRouter, usuariosRouter, noticiasRouter
 } = require('../modules/controller/routes') //Acceso a los Routers
 
 const app = express();
@@ -21,7 +21,7 @@ app.use(express.json({ limit: '50mb' })); //Permite peticiones hasta 50mb
 app.get('/', (req, res) => {
     res.send("Servicio NodeJS - Copa Mundial de la FIFA 2023 ");
 })
-//app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 
 //Endpoint's
@@ -32,5 +32,7 @@ app.use('/copa-mundial/resultados', resultadosRouter);
 app.use('/copa-mundial/jugadores', jugadoresRouter);
 app.use('/copa-mundial/arbitros', arbitrosRouter);
 app.use('/copa-mundial/directoresTecnicos', directoresTecnicosRouter);
+app.use('/copa-mundial/usuarios', usuariosRouter);
+app.use('/copa-mundial/noticias', noticiasRouter);
 
 module.exports = { app };
